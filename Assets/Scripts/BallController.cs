@@ -14,8 +14,20 @@ public class BallController : MonoBehaviour
         rig.velocity = speed;
     }
 
+    void Update() {
+        // Reset Ball speed and position to unstuck
+        if (Input.GetKey(KeyCode.R)) {
+            rig.velocity = speed;
+            ResetBall();
+        }
+    }
+
     public void ResetBall() {
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 2);
+    }
+
+    public void ActivatePUSpeedUp(float magnitude) {
+        rig.velocity *= magnitude;
     }
 
 }
