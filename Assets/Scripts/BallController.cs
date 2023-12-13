@@ -16,7 +16,7 @@ public class BallController : MonoBehaviour
 
     void Update() {
         // Reset Ball speed and position to unstuck
-        if (Input.GetKey(KeyCode.R)) {
+        if (Input.GetKeyDown(KeyCode.R)) {
             rig.velocity = speed;
             ResetBall();
         }

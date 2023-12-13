@@ -13,4 +13,13 @@ public class MainMenuController : MonoBehaviour
     public void OpenAuthor() {
         Debug.Log("Created By Mikhail Setyaprakasa");
     }
+
+    public void OpenCredit() {
+        SceneManager.LoadScene("Credit");
+    }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
+    
 }

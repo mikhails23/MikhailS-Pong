@@ -33,12 +33,11 @@ public class PowerUpManager : MonoBehaviour
         }
 
         foreach (TimedPowerUp timedPowerUp in powerUpList.ToList()) {
-            float ttl = timedPowerUp.powerUpTimer;
-            // Debug.Log("ttl: " + ttl);
-            timedPowerUp.powerUpTimer = ttl += Time.deltaTime;
-            if (ttl > maxTimeToLive) {
+            if (timedPowerUp.powerUpTimer > maxTimeToLive) {
                 RemoveTimedPowerUp(timedPowerUp);
             }
+
+            timedPowerUp.powerUpTimer += Time.deltaTime;
         }
         
     }
